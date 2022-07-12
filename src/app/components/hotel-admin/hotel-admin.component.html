@@ -1,0 +1,141 @@
+<!-- <div class ="container">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let adminHotel of hotelesModelGet">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ adminHotel.nombre }}</h4>
+
+          <p class="card-text">ID: {{adminHotel._id}}</p>
+          <p class="card-text">Direccion: {{ adminHotel.direccion }}</p>
+          <p class="card-text">Descripcion: {{ adminHotel.descripcion }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- Modal Ver administrador Hotel -->
+
+<br>
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1 >
+                     VER LOS HOTELES</h1>
+<br>
+<div class ="container">
+
+<!-- Buscar -->
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" autocomplete ="off" [(ngModel)]="buscar" name="buscar" placeholder="Ingrese la dirección" aria-label="Ingrese la dirección" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+</div>
+</div>
+
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let adminHotel of hotelesModelGet | direccion: buscar">
+      <div class="card text-white">
+        <div class="card-body">
+          <h4 class="card-title">{{ adminHotel.nombre }}</h4>
+
+          <img id="logos" src="../../../assets/img/38363.png" class="card-img-top" alt="compras-logo">
+          <br><br>
+
+          <p class="card-text">ID: {{adminHotel._id}}</p>
+          <p class="card-text">País: {{ adminHotel.pais }}</p>
+          <p class="card-text">Ciudad: {{ adminHotel.ciudad }}</p>
+          <p class="card-text">Direccion: {{ adminHotel.direccion }}</p>
+          <p class="card-text">Descripcion: {{ adminHotel.descripcion }}</p>
+
+          <div class="card-footer text-muted">
+
+            <button type="button" class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#editarHoteles"
+            aria-controls="offcanvasExample" (click)="getHotelId(adminHotel._id)">
+            Editar
+            </button>
+
+            <button type="button" class="btn btn-danger mx-2" (click)="eliminarUsuarios(adminHotel._id)">Eliminar</button>
+
+
+          </div>
+
+          <div class="card-footer text-muted">
+            <button type="button" class="btn btn btn-warning" (click)="getHotelId(adminHotel._id)" [routerLink]="['/admin/vistaHabitacionesAdmin', adminHotel._id]">Ver habitaciones del hotel</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal Agregar  -->
+<!-- <div class="modal fade" id="modalAgregarHotel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- Modal Editar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="editarHoteles" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Editar Hoteles</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label">Nombre Hotel</label>
+      <input type="text" autocomplete ="off" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel"
+      [(ngModel)]="hotelesModelGetId.nombre">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputPais" class="form-label">Pais</label>
+      <input type="text" autocomplete ="off" class="form-control" id="inputPais" name="pais" #pais="ngModel"
+      [(ngModel)]="hotelesModelGetId.pais">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputCiudad" class="form-label">Ciudad</label>
+      <input type="text" autocomplete ="off" class="form-control" id="inputCiudad" name="ciudad" #ciudad="ngModel"
+      [(ngModel)]="hotelesModelGetId.ciudad">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputDireccion" class="form-label">Direccion</label>
+      <input type="text" autocomplete ="off" class="form-control" id="inputDireccion" name="direccion" #direccion="ngModel"
+      [(ngModel)]="hotelesModelGetId.direccion">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputDescripcion" class="form-label">Descripcion</label>
+      <input type="text" autocomplete ="off" class="form-control" id="inputDescripcion" name="descripcion" #descripcion="ngModel"
+      [(ngModel)]="hotelesModelGetId.descripcion">
+    </div>
+
+    <button class="btn btn-success" data-bs-dismiss="offcanvas" (click)="putUsuarios()">Editar</button>
+
+  </div>
+</div>
+
+

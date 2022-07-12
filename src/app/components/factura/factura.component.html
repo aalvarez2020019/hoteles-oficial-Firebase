@@ -1,0 +1,42 @@
+<br>
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1>VER LAS FACTURAS</h1>
+<br>
+<div class ="container">
+
+
+
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let factur of facturaModelGetId">
+      <div class="card text-white bg-secondary mb-3">
+        <div class="card-body">
+          <h4 class="card-title">{{ factur._id }}</h4>
+
+          <img src="../../../assets/img/fondohotelnuevo.jpg" class="card-img-top" alt="compras-logo">
+          <br>
+          <br>
+
+          <p class="card-text">Id reservacion: {{ factur.reservacion }}</p>
+          <p class="card-text">Id usuario: {{ factur.usuario }}</p>
+          <p class="card-text">Id habitacion: {{ factur.habitacion }}</p>
+          <p class="card-text">Nit del usuario: {{ factur.noNit }} </p>
+          <p class="card-text">Fecha inicio: {{ factur.fechaInicio }}</p>
+          <p class="card-text">Fecha fin: {{ factur.fechaFin }}</p>
+          <p class="card-text">Servicios: {{ factur.servicioHotel }}</p>
+          <p class="card-text">Precio de habitación: {{ factur.precioDeHabitacion }}</p>
+          <p class="card-text">Número de noches: {{ factur.noNoches }}</p>
+          <p class="card-text">Total final: {{ factur.total }} </p>
+
+
+          <div class="card-footer text-muted">
+            <button type="button" class="btn btn-danger mx-2" (click)="eliminarFactura(factur._id)">Eliminar</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

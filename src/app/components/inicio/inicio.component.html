@@ -1,0 +1,158 @@
+
+
+        <main>
+          <div class="container pn-4 pt-4 pb-4">
+
+ <div class="container pn-4 pt-4 pb-4">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/imagenhotel.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+          <br>
+          <br>
+          <h5>Administración de hoteles</h5>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/TOP-10-software-de-gestion-hotelera.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Uso intuitivo y facil manejo de reservaciones</h5>
+          <p>Trabajamos en siempre tener una forma facil e intuitiva para nuestro usuario</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/01-4.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Personal</h5>
+          <p>Contamos con personal capacitado para el manejo de tu Hospedaje y gestion.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/evento.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Eventos</h5>
+          <p>Puedes hacer tu evento o reservar uno de los hoteles gestionados</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="accordion" id="accordionExample">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Descripción
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>¿Qué hacemos?</strong> <br>
+          nosotros somos una aplicacion la cual gestiona tu hotel, puedes ver toda la informacion de tus clientes, tambien pueden usar esta misma pagina para reservaciones y eventos
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Hoteles
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+           Gestionamos de manera idonea tu negocio de hotel, podemos tambien hacer que tu cliente reserve y lleve su control de una manera mas facil.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           Horarios
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+           Nuestros horarios son de 7:00 AM a 22:00 PM, sera un gusto atenderte
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+   </div>
+  </div>
+
+</main>
+
+<br>
+
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1 >
+                     TODOS LOS HOTELES</h1>
+<br>
+
+<div class="col-lg-3 col-md-4 d-flex">
+  <button class="btn btn-primary w-100 align-self-center" routerLink="/login"> ← Regresar al login</button>
+
+</div>
+
+<br>
+          <br>
+
+<div class ="container">
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" autocomplete ="off" [(ngModel)]="buscar" name="buscar" placeholder="Ingrese la dirección" aria-label="Ingrese la dirección" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let adminHotel of hotelesModelGet | direccion: buscar">
+      <div class="card text-white bg-secondary mb-3">
+        <div class="card-body">
+          <h4 class="card-title">{{ adminHotel.nombre }}</h4>
+
+          <img id="logos" src="../../../assets/img/hoteldos.png" class="card-img-top" alt="compraaa">
+          <br>
+          <br>
+
+          <p class="card-text">ID: {{adminHotel._id}}</p>
+          <p class="card-text">País: {{ adminHotel.pais }}</p>
+          <p class="card-text">Ciudad: {{ adminHotel.ciudad }}</p>
+          <p class="card-text">Direccion: {{ adminHotel.direccion }}</p>
+          <p class="card-text">Descripcion: {{ adminHotel.descripcion }}</p>
+
+          <div class="card-footer text-muted">
+            <button type="button" class="btn btn btn-warning" (click)="getHotelesId(adminHotel._id)" [routerLink]="['/vistageneral', adminHotel._id]">Ver lo que ofrece este hotel</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

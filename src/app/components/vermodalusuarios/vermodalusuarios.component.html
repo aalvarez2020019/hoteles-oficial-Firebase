@@ -1,0 +1,86 @@
+<br>
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1 >
+                     HABITACIONES DE ESTE HOTEL</h1>
+<br>
+<div class ="container">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let habitacion of habitacionesModelGet">
+      <div class="card text-white">
+        <div class="card-body">
+          <h4 class="card-title">{{ habitacion.nombreHabitacion }}</h4>
+
+          <img id="logos" src="../../../assets/img/habitacion6.png" class="card-img-top" alt="compra">
+          <br>
+          <br>
+
+          <p class="card-text">ID: {{habitacion._id}}</p>
+          <p class="card-text">Descripción: {{ habitacion.descripcion }}</p>
+          <p class="card-text">Servicios del hotel: {{ habitacion.hotelServicios }}</p>
+          <p class="card-text">Noches: {{ habitacion.stockNoches }}</p>
+          <p class="card-text">Estado: {{ habitacion.estado }}</p>
+          <p class="card-text">Precio: {{ habitacion.precio }}</p>
+          <p class="card-text">Total Habitacion: {{ habitacion.totalHab }}</p>
+          <p class="card-text">Nit: {{ habitacion.nit }}</p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<h1 >
+  SERVICIOS DE ESTE HOTEL</h1>
+  <div class ="container">
+    <div class="row">
+      <div class="col-12 col-md-4" *ngFor="let servicios of serviciosModelGet">
+        <div class="card text-white">
+          <div class="card-body">
+            <h4 class="card-title">{{ servicios.nombreServicio }}</h4>
+
+            <img id="logos" src="../../../assets/img/servicios.png" class="card-img-top" alt="services">
+                <br>
+                <br>
+            <p class="card-text">ID: {{servicios._id}}</p>
+            <p class="card-text">País: {{ servicios.descripcionServicio }}</p>
+
+
+           <!-- <button type="button" class="btn btn-success" (click)="getServiciosId(servicios._id)">
+              get id
+            </button>  -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+<br>
+<h1 >
+  EVENTOS DE ESTE HOTEL</h1>
+  <div class ="container">
+
+    <div class="row">
+      <div class="col-12 col-md-4" *ngFor="let eventos of eventosModelGet">
+        <div class="card text-white">
+          <div class="card-body">
+
+            <h4 class="card-title">{{ eventos.nombre }}</h4>
+            <img id="logos" src="../../../assets/img/unoevento.png" class="card-img-top" alt="unoevento">
+            <br>
+            <br>
+            <p class="card-text">ID: {{eventos._id}}</p>
+            <p class="card-text">Descripción: {{ eventos.descripcion }}</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

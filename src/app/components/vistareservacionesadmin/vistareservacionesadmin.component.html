@@ -1,0 +1,26 @@
+<br>
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1 >
+                     RESERVACIONES DE ESTE HOTEL</h1>
+<br>
+<div class ="container">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let reservacion of reservacionesModelGet">
+      <div class="card text-white">
+        <div class="card-body">
+          <h4 class="card-title">{{ reservacion._id }}</h4>
+          <img id="logos" src="../../../assets/img/imgreservacion.png" class="card-img-top" alt="habi">
+          <br>
+          <br>
+          <p class="card-text">Fecha Inicio {{reservacion.fechaInicio}}</p>
+          <p class="card-text">Fecha Fin {{ reservacion.fechaFin }}</p>
+          <p class="card-text">Usuario: {{ reservacion.usuario }}</p>
+          <p class="card-text">Habitacion: {{ reservacion.habitacion }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<br>
+<div class="container ">
+  <div class="container text-center text-Whyte bg-white py-4">
+      <div class="container">
+                  <h1 >
+                     HABITACIONES DE ESTE HOTEL</h1>
+<br>
+<div class ="container">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let habitacion of habitacionesModelGet">
+      <div class="card text-white">
+        <div class="card-body">
+          <h4 class="card-title">{{ habitacion.nombreHabitacion }}</h4>
+          <img id="logos" src="../../../assets/img/habitacionuno.png" class="card-img-top" alt="habi">
+          <br>
+          <br>
+          <p class="card-text">ID: {{habitacion._id}}</p>
+          <p class="card-text">Descripción: {{ habitacion.descripcion }}</p>
+          <p class="card-text">Servicios del hotel: {{ habitacion.hotelServicios }}</p>
+          <p class="card-text">Noches: {{ habitacion.stockNoches }}</p>
+          <p class="card-text">Estado: {{ habitacion.estado }}</p>
+          <p class="card-text">Precio: {{ habitacion.precio }}</p>
+          <p class="card-text">Total Habitacion: {{ habitacion.totalHab }}</p>
+          <p class="card-text">Nit: {{ habitacion.nit }}</p>
+
+          <div class="card-footer text-muted">
+            <button type="button" class="btn btn btn-warning" (click)="habitacionId(habitacion._id)" [routerLink]="['/admin/vistareservacionesAdmin', habitacion._id]">Ver las reservaciones</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
